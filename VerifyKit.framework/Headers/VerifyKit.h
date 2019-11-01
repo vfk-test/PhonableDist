@@ -2,8 +2,8 @@
 //  VerifyKit.h
 //  VerifyKit
 //
-//  Created by Alper Kayabaşı on 21.10.2019.
-//  Copyright © 2019 Teknasyon. All rights reserved.
+//  Created by Can Koç on 14.10.2019.
+//  Copyright © 2019 Can Koç. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
