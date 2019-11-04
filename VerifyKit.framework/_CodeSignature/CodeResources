@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		rVi3jY25Gxxi+vpV50lXmSuvFM4=
+		ZN1JjI/JU8LGWEt9Bp9Da3l94T4=
 		</data>
 		<key>Headers/VerifyKit-Swift.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		y9b8Gl65frCSOvpiYXvnIxDZ4Jw=
+		CWUU9ucKxi9F17eREJ6nk+Umh6Y=
 		</data>
 		<key>Modules/VerifyKit.swiftmodule/arm.swiftdoc</key>
 		<data>
@@ -91,11 +91,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rVi3jY25Gxxi+vpV50lXmSuvFM4=
+			ZN1JjI/JU8LGWEt9Bp9Da3l94T4=
 			</data>
 			<key>hash2</key>
 			<data>
-			+SFsdZwwHWjMcyCIRHSLK36D0cQumODI7Xgpf7YbRxM=
+			pKY03V823Xu9HVLvdsWRB2/mCvupCauF/9EZraIpt+A=
 			</data>
 		</dict>
 		<key>Headers/VerifyKit-Swift.h</key>
