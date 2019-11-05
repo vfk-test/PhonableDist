@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)
-// swift-module-flags: -target armv7-apple-ios10.3 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VerifyKit
+// swift-module-flags: -target x86_64-apple-ios10.3-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VerifyKit
 import CoreTelephony
 import CryptoSwift
 import Foundation
@@ -12,7 +12,7 @@ public enum VerifyKitError : Swift.Error {
   case authorizationError
   case serverError
   case urlSchemeError
-  public static func == (a: VerifyKitError, b: VerifyKitError) -> Swift.Bool
+  public static func == (a: VerifyKit.VerifyKitError, b: VerifyKit.VerifyKitError) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
@@ -21,7 +21,7 @@ public enum VerifyKitError : Swift.Error {
 public enum VerifyKitEnvironment {
   case debug
   case prod
-  public static func == (a: VerifyKitEnvironment, b: VerifyKitEnvironment) -> Swift.Bool
+  public static func == (a: VerifyKit.VerifyKitEnvironment, b: VerifyKit.VerifyKitEnvironment) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
@@ -34,15 +34,15 @@ public struct VerifyKitTheme {
 }
 public struct VerifyKitOptions {
   public var logActive: Swift.Bool
-  public var theme: VerifyKitTheme
-  public init(environment: VerifyKitEnvironment = .debug, logActive: Swift.Bool = true, theme: VerifyKitTheme = VerifyKitTheme())
+  public var theme: VerifyKit.VerifyKitTheme
+  public init(environment: VerifyKit.VerifyKitEnvironment = .debug, logActive: Swift.Bool = true, theme: VerifyKit.VerifyKitTheme = VerifyKitTheme())
 }
 public protocol VerifyKitDelegate : UIKit.UIViewController {
   func didCompleteLogin(with sessionCode: Swift.String)
-  func didFail(with error: VerifyKitError)
+  func didFail(with error: VerifyKit.VerifyKitError)
 }
 public protocol VerifyKitViewController : UIKit.UIViewController {
-  var kitDelegate: VerifyKitDelegate? { get set }
+  var kitDelegate: VerifyKit.VerifyKitDelegate? { get set }
 }
 public enum ReachabilityError : Swift.Error {
   case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
@@ -57,15 +57,15 @@ extension NSNotification.Name {
   public static let reachabilityChanged: Foundation.Notification.Name
 }
 public class Reachability {
-  public typealias NetworkReachable = (Reachability) -> ()
-  public typealias NetworkUnreachable = (Reachability) -> ()
+  public typealias NetworkReachable = (VerifyKit.Reachability) -> ()
+  public typealias NetworkUnreachable = (VerifyKit.Reachability) -> ()
   @available(*, unavailable, renamed: "Connection")
   public enum NetworkStatus : Swift.CustomStringConvertible {
     case notReachable, reachableViaWiFi, reachableViaWWAN
     public var description: Swift.String {
       get
     }
-    public static func == (a: Reachability.NetworkStatus, b: Reachability.NetworkStatus) -> Swift.Bool
+    public static func == (a: VerifyKit.Reachability.NetworkStatus, b: VerifyKit.Reachability.NetworkStatus) -> Swift.Bool
     public var hashValue: Swift.Int {
       get
     }
@@ -78,14 +78,14 @@ public class Reachability {
     public var description: Swift.String {
       get
     }
-    public static func == (a: Reachability.Connection, b: Reachability.Connection) -> Swift.Bool
+    public static func == (a: VerifyKit.Reachability.Connection, b: VerifyKit.Reachability.Connection) -> Swift.Bool
     public var hashValue: Swift.Int {
       get
     }
     public func hash(into hasher: inout Swift.Hasher)
   }
-  public var whenReachable: Reachability.NetworkReachable?
-  public var whenUnreachable: Reachability.NetworkUnreachable?
+  public var whenReachable: VerifyKit.Reachability.NetworkReachable?
+  public var whenUnreachable: VerifyKit.Reachability.NetworkUnreachable?
   @available(*, deprecated, renamed: "allowsCellularConnection")
   final public let reachableOnWWAN: Swift.Bool
   public var allowsCellularConnection: Swift.Bool
@@ -95,10 +95,10 @@ public class Reachability {
     get
   }
   @available(*, unavailable, renamed: "connection")
-  public var currentReachabilityStatus: Reachability.Connection {
+  public var currentReachabilityStatus: VerifyKit.Reachability.Connection {
     get
   }
-  public var connection: Reachability.Connection {
+  public var connection: VerifyKit.Reachability.Connection {
     get
   }
   required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main)
@@ -127,17 +127,17 @@ extension Reachability {
 }
 public class VerifyKit {
   public init()
-  public init(options: VerifyKitOptions)
-  public func viewControllerForLogin() -> VerifyKitViewController
+  public init(options: VerifyKit.VerifyKitOptions)
+  public func viewControllerForLogin() -> VerifyKit.VerifyKitViewController
   @objc deinit
 }
-extension VerifyKitError : Swift.Equatable {}
-extension VerifyKitError : Swift.Hashable {}
-extension VerifyKitEnvironment : Swift.Equatable {}
-extension VerifyKitEnvironment : Swift.Hashable {}
+extension VerifyKit.VerifyKitError : Swift.Equatable {}
+extension VerifyKit.VerifyKitError : Swift.Hashable {}
+extension VerifyKit.VerifyKitEnvironment : Swift.Equatable {}
+extension VerifyKit.VerifyKitEnvironment : Swift.Hashable {}
 @available(*, unavailable, renamed: "Connection")
-extension Reachability.NetworkStatus : Swift.Equatable {}
+extension VerifyKit.Reachability.NetworkStatus : Swift.Equatable {}
 @available(*, unavailable, renamed: "Connection")
-extension Reachability.NetworkStatus : Swift.Hashable {}
-extension Reachability.Connection : Swift.Equatable {}
-extension Reachability.Connection : Swift.Hashable {}
+extension VerifyKit.Reachability.NetworkStatus : Swift.Hashable {}
+extension VerifyKit.Reachability.Connection : Swift.Equatable {}
+extension VerifyKit.Reachability.Connection : Swift.Hashable {}
