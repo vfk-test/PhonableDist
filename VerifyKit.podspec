@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     s.author             = { "Teknasyon Yazilim" => "vfk-gub@teknasyon.com" }
     s.source       = { :git => "https://github.com/vfk-test/PhonableDist.git", :branch => "master", :tag => "#{s.version}" }
     s.vendored_frameworks = "VerifyKit.framework"
-    s.dependency "CryptoSwift"
+    s.dependency "CryptoSwift", '~> 1.0'
     s.platform = :ios
     s.swift_version = ['5.0', '5.1']
     s.ios.deployment_target  = '10.3'
