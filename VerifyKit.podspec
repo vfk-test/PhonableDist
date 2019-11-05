@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
     s.source       = { :git => "https://github.com/vfk-test/PhonableDist.git", :branch => "master", :tag => "#{s.version}" }
     s.public_header_files = "VerifyKit.framework/Headers/*.h"
     s.source_files = "VerifyKit.framework/*"
+    s.vendored_frameworks = "VerifyKit.framework"
     s.dependency "CryptoSwift"
     s.platform = :ios
     s.swift_version = ['5.0', '5.1']
