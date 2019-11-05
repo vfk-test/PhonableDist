@@ -18,15 +18,31 @@ public enum VerifyKitError : Swift.Error {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
+public enum VerifyKitEnvironment {
+  case debug
+  case prod
+  public static func == (a: VerifyKit.VerifyKitEnvironment, b: VerifyKit.VerifyKitEnvironment) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public struct VerifyKitTheme {
+  public var navigationBarBackgroundColor: UIKit.UIColor
+  public var statusBarColor: UIKit.UIStatusBarStyle
+  public init(navigationBarBackgroundColor: UIKit.UIColor = .blue, statusBarColor: UIKit.UIStatusBarStyle = .lightContent)
+}
+public struct VerifyKitOptions {
+  public var logActive: Swift.Bool
+  public var theme: VerifyKit.VerifyKitTheme
+  public init(environment: VerifyKit.VerifyKitEnvironment = .debug, logActive: Swift.Bool = true, theme: VerifyKit.VerifyKitTheme = VerifyKitTheme())
+}
 public protocol VerifyKitDelegate : UIKit.UIViewController {
   func didCompleteLogin(with sessionCode: Swift.String)
   func didFail(with error: VerifyKit.VerifyKitError)
 }
-public class VerifyKit {
-  public init()
-  public init(options: VerifyKit.VerifyKitOptions)
-  public func viewControllerForLogin() -> VerifyKit.VerifyKitViewController
-  @objc deinit
+public protocol VerifyKitViewController : UIKit.UIViewController {
+  var kitDelegate: VerifyKit.VerifyKitDelegate? { get set }
 }
 public enum ReachabilityError : Swift.Error {
   case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
@@ -109,35 +125,19 @@ extension Reachability {
     get
   }
 }
-public struct VerifyKitOptions {
-  public var logActive: Swift.Bool
-  public var theme: VerifyKit.VerifyKitTheme
-  public init(environment: VerifyKit.VerifyKitEnvironment = .debug, logActive: Swift.Bool = true, theme: VerifyKit.VerifyKitTheme = VerifyKitTheme())
-}
-public enum VerifyKitEnvironment {
-  case debug
-  case prod
-  public static func == (a: VerifyKit.VerifyKitEnvironment, b: VerifyKit.VerifyKitEnvironment) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-  public func hash(into hasher: inout Swift.Hasher)
-}
-public struct VerifyKitTheme {
-  public var navigationBarBackgroundColor: UIKit.UIColor
-  public var statusBarColor: UIKit.UIStatusBarStyle
-  public init(navigationBarBackgroundColor: UIKit.UIColor = .blue, statusBarColor: UIKit.UIStatusBarStyle = .lightContent)
-}
-public protocol VerifyKitViewController : UIKit.UIViewController {
-  var kitDelegate: VerifyKit.VerifyKitDelegate? { get set }
+public class VerifyKit {
+  public init()
+  public init(options: VerifyKit.VerifyKitOptions)
+  public func viewControllerForLogin() -> VerifyKit.VerifyKitViewController
+  @objc deinit
 }
 extension VerifyKit.VerifyKitError : Swift.Equatable {}
 extension VerifyKit.VerifyKitError : Swift.Hashable {}
+extension VerifyKit.VerifyKitEnvironment : Swift.Equatable {}
+extension VerifyKit.VerifyKitEnvironment : Swift.Hashable {}
 @available(*, unavailable, renamed: "Connection")
 extension VerifyKit.Reachability.NetworkStatus : Swift.Equatable {}
 @available(*, unavailable, renamed: "Connection")
 extension VerifyKit.Reachability.NetworkStatus : Swift.Hashable {}
 extension VerifyKit.Reachability.Connection : Swift.Equatable {}
 extension VerifyKit.Reachability.Connection : Swift.Hashable {}
-extension VerifyKit.VerifyKitEnvironment : Swift.Equatable {}
-extension VerifyKit.VerifyKitEnvironment : Swift.Hashable {}
