@@ -2,7 +2,7 @@
 //  VerifyKit.h
 //  VerifyKit
 //
-//  Created by Can Koç on 14.10.2019.
+//  Created by Can Koç on 5.11.2019.
 //  Copyright © 2019 Can Koç. All rights reserved.
 //
 
