@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		O8W40VkIByYdrbib3d6Dkz8CR6E=
+		LFBAjYVaE5pMfvZI3UMtp1PiT18=
 		</data>
 		<key>Headers/VerifyKit-Swift.h</key>
 		<data>
@@ -24,17 +24,25 @@
 		<data>
 		GqqrcbOfA5QueLJGC5/w4QgGHd8=
 		</data>
+		<key>Modules/VerifyKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
+		<data>
+		3KMcJVetXVjojOOdozDs80iAr18=
+		</data>
 		<key>Modules/VerifyKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		P3tyRrpC4su7KjnUYKV1N4/jdho=
+		Q7w0uSRVuTxaBZb9tNB4QC1zUxU=
 		</data>
 		<key>Modules/VerifyKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
 		GqqrcbOfA5QueLJGC5/w4QgGHd8=
 		</data>
+		<key>Modules/VerifyKit.swiftmodule/arm64.swiftinterface</key>
+		<data>
+		3KMcJVetXVjojOOdozDs80iAr18=
+		</data>
 		<key>Modules/VerifyKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		P3tyRrpC4su7KjnUYKV1N4/jdho=
+		Q7w0uSRVuTxaBZb9tNB4QC1zUxU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,7 +55,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			c87mqGcfqMJzWqbeiiLnIzKczLveTeVI5OIunLpIePo=
+			M8/0ppm4zpnyoLYRmYbxCr6bf1pPluRv3yKtNX1qRdg=
 			</data>
 		</dict>
 		<key>Headers/VerifyKit-Swift.h</key>
@@ -71,11 +79,18 @@
 			YB4mwIFlTt7GFpdat4/VOajT/XtFIWXyoy1EnK6I3mA=
 			</data>
 		</dict>
+		<key>Modules/VerifyKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QMdefFFojQ0pSXb/fUQSTIlTRjEPN2oAicpObKg+fQA=
+			</data>
+		</dict>
 		<key>Modules/VerifyKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R7z5O7A8pqMRjU888aHSyfXx1rhX9vTUbn3Uy8/Yt8M=
+			Ag8XoZXAinZUyCeBPdEQisIGoKfs5tlkfC3xn1Y5rgU=
 			</data>
 		</dict>
 		<key>Modules/VerifyKit.swiftmodule/arm64.swiftdoc</key>
@@ -85,11 +100,18 @@
 			YB4mwIFlTt7GFpdat4/VOajT/XtFIWXyoy1EnK6I3mA=
 			</data>
 		</dict>
+		<key>Modules/VerifyKit.swiftmodule/arm64.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QMdefFFojQ0pSXb/fUQSTIlTRjEPN2oAicpObKg+fQA=
+			</data>
+		</dict>
 		<key>Modules/VerifyKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R7z5O7A8pqMRjU888aHSyfXx1rhX9vTUbn3Uy8/Yt8M=
+			Ag8XoZXAinZUyCeBPdEQisIGoKfs5tlkfC3xn1Y5rgU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
