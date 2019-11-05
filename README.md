@@ -33,12 +33,15 @@ You can get the result via ```VerifyKitDelegate``` protocol.
 
 viewController.kitDelegate = self
 
-func didCompleteLogin(with sessionCode: String) {
-    print("VerifyKitDelegate didCompleteLogin sessionCode:\(sessionCode)")
-}
+extension ViewController: VerifyKitDelegate {
     
-func didFail(with error: VerifyKitError) {
-    print("VerifyKitDelegate didFail error:\(error)")
+    func didCompleteLogin(with sessionCode: String) {
+        print("VerifyKitDelegate didCompleteLogin sessionCode:\(sessionCode)")
+    }
+    
+    func didFail(with error: VerifyKitError) {
+        print("VerifyKitDelegate didFail error:\(error)")
+    }
 }
 ```
 
