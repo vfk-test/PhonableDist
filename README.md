@@ -14,7 +14,7 @@ Or you can [click here](http://www.google.com) to download the framework and add
 
 After you added the files to your project, you need to add both frameworks to ```Frameworks, Libraries, and Embedded Content``` panel in your Project's general settings, then set ```Embed``` option as ```Embed & Sign```.
 
-## Basic Usage
+## Usage
 
 To successfully use the framework, you need to add ```VerifyKitKey``` and ```VerifyKitSecret``` to your plist file. This step is mandantory.
 
@@ -53,7 +53,7 @@ let kit = VerifyKit(options: options)
 ```
 
 
-## Options Struct
+## VerifyKitOptions Struct
 
 You can change the settings declared in ```VerifyKitOptions``` struct.
 
@@ -63,7 +63,6 @@ public struct VerifyKitOptions {
     var logActive: Bool
     var theme: VerifyKitTheme
 }
-
 
 public enum VerifyKitEnvironment {
     
