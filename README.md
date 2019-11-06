@@ -1,4 +1,7 @@
 # VerifyKit
+[![Platform](https://img.shields.io/badge/Platforms-iOS-4E4E4E.svg?colorA=28a745)](#installation)
+
+[![Swift support](https://img.shields.io/badge/Swift-4.0%20%7C%204.1%20%7C%204.2%20%7C%205.0-lightgrey.svg?colorA=28a745&colorB=4E4E4E)](#swift-versions-support)
 
 VerifyKit is a framework to easily integrate phone number validation flow to your mobile application.
 
