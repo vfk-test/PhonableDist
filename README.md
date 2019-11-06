@@ -1,4 +1,5 @@
 # VerifyKit
+[![Swift Version][swift-image]][swift-url]
 
 VerifyKit is a framework to easily integrate phone number validation flow to your mobile application.
 
