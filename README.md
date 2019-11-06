@@ -2,6 +2,8 @@
 [![Platform](https://img.shields.io/badge/Platforms-iOS-4E4E4E.svg?colorA=28a745)](#installation)
 
 [![Swift support](https://img.shields.io/badge/Swift-4.0%20%7C%204.1%20%7C%204.2%20%7C%205.0-lightgrey.svg?colorA=28a745&colorB=4E4E4E)](#swift-versions-support)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/VerifyKit.svg?style=flat&label=CocoaPods&colorA=28a745&&colorB=4E4E4E)](https://cocoapods.org/pods/VerifyKit)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-uncompatible-red.svg?style=flat&colorA=28a745&&colorB=4E4E4E)](https://github.com/Carthage/Carthage)
 
 VerifyKit is a framework to easily integrate phone number validation flow to your mobile application.
 
@@ -108,7 +110,7 @@ public enum VerifyKitEnvironment {
     case debug
 
     /// Production environment for distribution
-    case prod
+    case release
 }
 
 public struct VerifyKitTheme {
