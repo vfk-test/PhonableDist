@@ -2,6 +2,10 @@
 
 VerifyKit is a framework to easily integrate phone number validation flow to your mobile application.
 
+## Requirements
+
+This framework requires the latest version of Xcode.
+
 ## Installation
 
 You can install framework via CocoaPods.
@@ -14,9 +18,38 @@ Or you can [click here](http://www.google.com) to download the framework and add
 
 After you added the files to your project, you need to add both frameworks to ```Frameworks, Libraries, and Embedded Content``` panel in your Project's general settings, then set ```Embed``` option as ```Embed & Sign```.
 
-## Usage
+## Configure Info.plist
 
 To successfully use the framework, you need to add ```VerifyKitKey``` and ```VerifyKitSecret``` to your plist file. This step is mandantory.
+
+After user chooses to validate the phone number with a third party messaging app, the SDK needs to return to main app.
+To successfully complete this flow, you need to add ```vfk{your-verifykit-key}``` as URL Scheme to your plist file.
+
+Open your Info.plist as source code and insert the following XML snippet into the body of your file just before the final </dict> element.
+
+```
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>vfk{your-verifykit-key}</string>
+    </array>
+  </dict>
+</array>
+<key>VerifyKitKey</key>
+<string>{your-verifykit-key}</string>
+<key>VerifyKitSecret</key>
+<string>{your-verifykit-secret-key}</string>
+<key>LSApplicationQueriesSchemes</key>
+<array>
+  <string>whatsapp</string>
+  <string>tg</string>
+  <string>viber</string>
+</array>
+```
+
+## Usage
 
 ```swift
 import VerifyKit
@@ -35,7 +68,7 @@ viewController.kitDelegate = self
 
 extension ViewController: VerifyKitDelegate {
     
-    func didCompleteLogin(with sessionCode: String) {
+    func didSuccess(with sessionCode: String) {
         print("VerifyKitDelegate didCompleteLogin sessionCode:\(sessionCode)")
     }
     
