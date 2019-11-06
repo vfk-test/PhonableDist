@@ -114,6 +114,10 @@ public struct VerifyKitTheme {
 }
 ```
 
+## Dependencies
+
+VerifyKit uses the CryptoSwift for network traffic encryption.
+
 ## Notes
 
 Before your app release, please change the VerifyKitEnvironment to 'prod' instead of 'debug'.
