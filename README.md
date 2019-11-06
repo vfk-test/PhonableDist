@@ -20,7 +20,7 @@ If you choose to use the SDK manually, after you added the files to your project
 
 ## Configure Info.plist
 
-To successfully use the framework, you need to add ```VerifyKitKey``` and ```VerifyKitSecret``` to your plist file. This step is mandantory.
+To successfully use the framework, you need to add ```VerifyKitKey``` and ```VerifyKitSecret``` to your plist file. This step is mandatory.
 
 After user chooses to validate the phone number with a third party messaging app, the SDK needs to return to main app.
 To successfully complete this flow, you need to add ```vfk{your-verifykit-key}``` as URL Scheme to your plist file.
@@ -54,7 +54,7 @@ Open your Info.plist as source code and insert the following XML snippet into th
 ```swift
 import VerifyKit
 
-        
+
 let kit = VerifyKit()
 let viewController = kit.viewControllerForLogin()
 self.present(viewController, animated: true, completion: nil)
@@ -67,11 +67,11 @@ You can get the result via ```VerifyKitDelegate``` protocol.
 viewController.kitDelegate = self
 
 extension ViewController: VerifyKitDelegate {
-    
+
     func didSuccess(with sessionCode: String) {
         print("VerifyKitDelegate didCompleteLogin sessionCode:\(sessionCode)")
     }
-    
+
     func didFail(with error: VerifyKitError) {
         print("VerifyKitDelegate didFail error:\(error)")
     }
@@ -92,22 +92,28 @@ You can change the settings declared in ```VerifyKitOptions``` struct.
 
 ```swift
 public struct VerifyKitOptions {
-    var environment: VerifyKitEnvironment
-    var logActive: Bool
-    var theme: VerifyKitTheme
+    var environment: VerifyKitEnvironment = .debug // default
+    var logActive: Bool = true // default
+    var theme: VerifyKitTheme = VerifyKitTheme()
 }
 
 public enum VerifyKitEnvironment {
-    
+
     /// Stage environment for debug
     case debug
-    
+
     /// Production environment for distribution
     case prod
 }
 
 public struct VerifyKitTheme {
-    public var navigationBarBackgroundColor: UIColor
-    public var statusBarColor: UIStatusBarStyle
+    public var appName: String = "VerifyKit" // default
+    public var statusBarColor: UIStatusBarStyle = .lightContent // default
+    public var navigationBarBackgroundColor: UIColor = .blue // default
+    public var navigationBarForegroundColor: UIColor = .white // default
 }
 ```
+
+## Notes
+
+Before your app release, please change the VerifyKitEnvironment to 'prod' instead of 'debug'.
