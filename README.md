@@ -15,7 +15,7 @@ VerifyKit is a framework to easily integrate phone number validation flow to you
 ## Installation
 
 #### CocoaPods
-You can install framework via CocoaPods(https://cocoapods.org/pods/CryptoSwift).
+You can install framework via [CocoaPods](https://cocoapods.org/pods/VerifyKit).
 
 ```bash
 pod 'VerifyKit', :git => 'https://github.com/vfk-test/PhonableDist.git'
