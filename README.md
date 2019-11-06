@@ -71,11 +71,11 @@ viewController.kitDelegate = self
 extension ViewController: VerifyKitDelegate {
 
     func didSuccess(with sessionCode: String) {
-        print("VerifyKitDelegate didCompleteLogin sessionCode:\(sessionCode)")
+        print("VerifyKitDelegate didSuccess with sessionCode:\(sessionCode)")
     }
 
     func didFail(with error: VerifyKitError) {
-        print("VerifyKitDelegate didFail error:\(error)")
+        print("VerifyKitDelegate didFail with error:\(error)")
     }
 }
 ```
