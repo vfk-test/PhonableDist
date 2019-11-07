@@ -23,7 +23,7 @@ pod 'VerifyKit', :git => 'https://github.com/vfk-test/PhonableDist.git'
 
 ## Manual Installation
 
-Or you can [click here](http://www.google.com) to download the framework and add the files via drag and drop.
+Or you can [click here](http://www.google.com) to download the framework and add the files with drag and drop.
 
 If you choose to use the SDK manually, after you added the files to your project, you need to add both frameworks to ```Frameworks, Libraries, and Embedded Content``` panel in your Project's general settings, then set ```Embed``` option as ```Embed & Sign```.
 
@@ -32,7 +32,7 @@ If you choose to use the SDK manually, after you added the files to your project
 To successfully use the framework, you need to add ```VerifyKitKey``` and ```VerifyKitSecret``` to your plist file. This step is mandatory.
 
 After user chooses to validate the phone number with a third party messaging app, the SDK needs to return to main app.
-To successfully complete this flow, you need to add ```vfk{your-verifykit-key}``` as URL Scheme to your plist file.
+To successfully complete this flow, you need to add ```vfk{your-verifykit-id}``` as URL Scheme to your plist file.
 
 Open your Info.plist as source code and insert the following XML snippet into the body of your file just before the final </dict> element.
 
@@ -42,7 +42,7 @@ Open your Info.plist as source code and insert the following XML snippet into th
   <dict>
     <key>CFBundleURLSchemes</key>
     <array>
-      <string>vfk{your-verifykit-key}</string>
+      <string>vfk{your-verifykit-id}</string>
     </array>
   </dict>
 </array>
@@ -125,8 +125,8 @@ public struct VerifyKitTheme {
 
 ## Dependencies
 
-VerifyKit uses the CryptoSwift for network traffic encryption.
+VerifyKit uses CryptoSwift for network traffic encryption.
 
 ## Notes
 
-Before your app release, please change the VerifyKitEnvironment to 'prod' instead of 'debug'.
+Before your app release, please change the VerifyKitEnvironment to 'release' instead of 'debug'.
