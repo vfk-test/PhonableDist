@@ -10,17 +10,12 @@ import UIKit
 @_exported import VerifyKit
 public enum VerifyKitError : Swift.Error {
   case authorizationError
-  case serverError
+  case apiError(description: Swift.String)
   case urlSchemeError
-  public static func == (a: VerifyKitError, b: VerifyKitError) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public enum VerifyKitEnvironment {
   case debug
-  case prod
+  case release
   public static func == (a: VerifyKitEnvironment, b: VerifyKitEnvironment) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
@@ -28,17 +23,17 @@ public enum VerifyKitEnvironment {
   public func hash(into hasher: inout Swift.Hasher)
 }
 public struct VerifyKitTheme {
-  public var navigationBarBackgroundColor: UIKit.UIColor
+  public var appName: Swift.String
   public var statusBarColor: UIKit.UIStatusBarStyle
-  public init(navigationBarBackgroundColor: UIKit.UIColor = .blue, statusBarColor: UIKit.UIStatusBarStyle = .lightContent)
+  public var navigationBarBackgroundColor: UIKit.UIColor
+  public var navigationBarForegroundColor: UIKit.UIColor
+  public init(appName: Swift.String = "VerifyKit", statusBarColor: UIKit.UIStatusBarStyle = .default, navigationBarBackgroundColor: UIKit.UIColor = UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1.0), navigationBarForegroundColor: UIKit.UIColor = .black)
 }
 public struct VerifyKitOptions {
-  public var logActive: Swift.Bool
-  public var theme: VerifyKitTheme
   public init(environment: VerifyKitEnvironment = .debug, logActive: Swift.Bool = true, theme: VerifyKitTheme = VerifyKitTheme())
 }
 public protocol VerifyKitDelegate : UIKit.UIViewController {
-  func didCompleteLogin(with sessionCode: Swift.String)
+  func didSuccess(with sessionCode: Swift.String)
   func didFail(with error: VerifyKitError)
 }
 public protocol VerifyKitViewController : UIKit.UIViewController {
@@ -125,14 +120,12 @@ extension Reachability {
     get
   }
 }
-public class VerifyKit {
+final public class VerifyKit {
   public init()
   public init(options: VerifyKitOptions)
-  public func viewControllerForLogin() -> VerifyKitViewController
+  final public func viewControllerForLogin() -> VerifyKitViewController
   @objc deinit
 }
-extension VerifyKitError : Swift.Equatable {}
-extension VerifyKitError : Swift.Hashable {}
 extension VerifyKitEnvironment : Swift.Equatable {}
 extension VerifyKitEnvironment : Swift.Hashable {}
 @available(*, unavailable, renamed: "Connection")
