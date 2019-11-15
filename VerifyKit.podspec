@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "VerifyKit"
-    s.version      = "0.2.6"
+    s.version      = "0.2.7"
     s.summary      = "A brief description of VerifyKit project."
     s.description  = "VerifyKit is the newest and fastest way to mobile authentication."
     s.homepage     = "http://verifykit.com"
